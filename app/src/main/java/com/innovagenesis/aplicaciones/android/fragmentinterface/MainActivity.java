@@ -15,11 +15,17 @@ public class MainActivity extends AppCompatActivity implements Emisor.EnviarMens
     @Override
     public void enviarMensaje(String mensaje) {
 
+        /** Primero se instancia el fragment receptor*/
+
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragmentReceptor);
 
         if (fragment instanceof Receptor){
 
+            /** Se valida que esta bien instanciado y se hace la comunicación*/
+
             Receptor receptor = (Receptor)fragment;
+
+            /** Se envia el mensaje al metodo del receptor*/
             receptor.recibirMensaje(mensaje);
         }
     }

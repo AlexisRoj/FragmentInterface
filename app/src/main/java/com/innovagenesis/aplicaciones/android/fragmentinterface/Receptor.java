@@ -26,6 +26,7 @@ public class Receptor extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        /* Se instancia el textView que va a recibir el mensaje*/
         this.textView = (TextView)view.findViewById(R.id.textReceptor);
     }
 
@@ -38,6 +39,9 @@ public class Receptor extends Fragment {
     }
 
     public void recibirMensaje(String mensaje){
+
+        /** Este metodo atraba el mensaje enviado por el Emisor, interface que pasa atravez
+        * del mainActivity y se le asigna al textView del receptor*/
 
         this.textView.setText(mensaje);
 
